@@ -27,7 +27,19 @@ public class CityList {
      *      This is a candidate city to add
      */
     public void delete(City city) {
-        if (!hasCity(city)) {
+        /*
+        if (cities.contains(city)) {
+            cities.remove(city);
+        }
+        else {
+            throw new IllegalArgumentException();
+
+        }
+        
+         */
+
+
+        if (!checkcity(city)) {
             throw new IllegalArgumentException();
         }
 
@@ -37,13 +49,10 @@ public class CityList {
                 break;
             }
         }
-    }
 
 
-    public int countCities() {
-        return cities.size();
     }
-    public boolean hasCity(City city) {
+    public boolean checkcity(City city) {
         for (City c : cities) {
             if (c.getCityName().equals(city.getCityName()) &&
                     c.getProvinceName().equals(city.getProvinceName())) {
@@ -53,6 +62,12 @@ public class CityList {
 
         return false;
     }
+
+
+    public int countCities() {
+        return cities.size();
+    }
+
 
 
 
