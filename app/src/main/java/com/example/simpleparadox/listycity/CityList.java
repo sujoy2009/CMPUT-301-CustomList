@@ -21,6 +21,42 @@ public class CityList {
         }
         cities.add(city);
     }
+    /**
+     * This delete a city to the list if the city does not exist
+     * @param city
+     *      This is a candidate city to add
+     */
+    public void delete(City city) {
+        if (!hasCity(city)) {
+            throw new IllegalArgumentException();
+        }
+
+        for (City c : cities) {
+            if (c.compareTo(city) == 0){
+                cities.remove(c);
+                break;
+            }
+        }
+    }
+
+
+    public int countCities() {
+        return cities.size();
+    }
+    public boolean hasCity(City city) {
+        for (City c : cities) {
+            if (c.getCityName().equals(city.getCityName()) &&
+                    c.getProvinceName().equals(city.getProvinceName())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+
+
 
     /**
      * This returns a sorted list of cities

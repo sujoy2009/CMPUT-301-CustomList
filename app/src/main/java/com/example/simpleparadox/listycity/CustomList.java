@@ -48,3 +48,16 @@ public class CustomList extends ArrayAdapter<City> {
 
     }
 }
+/*
+to do
+1.method to return the size of city list
+
+public int countcities(){
+}
+2.delete a specific city objects.
+get a city object--if exsist then delete
+                   else through exception
+
+
+3.2 test class add for two differnet method 1,2.
+ */
